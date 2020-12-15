@@ -1,4 +1,4 @@
-import 'dart:io' as Io;
+import 'dart:io' as io;
 import 'package:image/image.dart';
 
 class Filter {
@@ -6,13 +6,13 @@ class Filter {
   String path;
 
   Filter(this.path) {
-    image = decodeImage(Io.File(path).readAsBytesSync());
+    image = decodeImage(io.File(path).readAsBytesSync());
   }
 
   void apply(int sigma) {}
 
   void save() {
-    Io.File('static/filtered_img.png')..writeAsBytesSync(encodePng(output));
+    io.File('static/filtered_img.png')..writeAsBytesSync(encodePng(output));
   }
 
   int clip(double val) {
