@@ -1,12 +1,6 @@
 import 'dart:io' as Io;
 import 'package:image/image.dart';
 
-void main(List<String> arguments) {
-  var filter = PencilSketch('static/img.jpg');
-  filter.apply(9);
-  filter.save();
-}
-
 class Filter {
   Image image, output;
   String path;
@@ -18,7 +12,7 @@ class Filter {
   void apply(int sigma) {}
 
   void save() {
-    Io.File('filtered_img.png')..writeAsBytesSync(encodePng(output));
+    Io.File('static/filtered_img.png')..writeAsBytesSync(encodePng(output));
   }
 
   int clip(double val) {
