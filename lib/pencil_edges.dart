@@ -11,6 +11,8 @@ class PencilEdges extends Filter {
       for (var j = 0; j < 3; j += 1) {
         if (img_b[i + j] > threshold) {
           img_b[i + j] = 255;
+        } else {
+          img_b[i + j] = 0;
         }
       }
     }
@@ -22,6 +24,6 @@ class PencilEdges extends Filter {
   void apply({int sigma = 9}) {
     var edges = sobel(grayscale(image.clone()));
     var inverseEdges = invert(edges.clone());
-    output = threshold(inverseEdges, 220);
+    output = threshold(inverseEdges, 210);
   }
 }
