@@ -13,8 +13,6 @@ class DetailEnhancement extends Filter {
       for (var j = 0; j < 3; j += 1) {
         if (msk_b[i + j] != 0) {
           img_b[i + j] = img_b[i + j] & img2_b[i + j];
-        } else {
-          img_b[i + j] = 0;
         }
       }
     }
