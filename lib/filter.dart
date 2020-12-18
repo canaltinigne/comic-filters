@@ -63,4 +63,22 @@ class Filter {
     return threshold(
         invert(sobel(gaussianBlur(grayscale(img.clone()), 3))), 200);
   }
+
+  Image bitwise_and(Image img1, Image img2, Image msk) {
+    var img_b = img1.getBytes();
+    var img2_b = img2.getBytes();
+    var msk_b = msk.getBytes();
+
+    for (var i = 0, len = img_b.length; i < len; i += 4) {
+      for (var j = 0; j < 3; j += 1) {
+        if (msk_b[i + j] != 0) {
+          img_b[i + j] = img_b[i + j] & img2_b[i + j];
+        } else {
+          img_b[i + j] = 0;
+        }
+      }
+    }
+
+    return img1;
+  }
 }
