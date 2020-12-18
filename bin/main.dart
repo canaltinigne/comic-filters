@@ -2,6 +2,7 @@ import 'package:filters/bilateral_filter.dart';
 import 'package:filters/detail_enhancement_filter.dart';
 import 'package:filters/pencil_sketch_filter.dart';
 import 'package:filters/pencil_edges.dart';
+import 'package:filters/quantization_filter.dart';
 
 void main(List<String> arguments) {
   var de_filter = DetailEnhancement('static/img.jpg');
@@ -19,4 +20,8 @@ void main(List<String> arguments) {
   var bl_filter = Bilateral('static/img.jpg');
   bl_filter.apply();
   bl_filter.save('static/bilateral_filter.png');
+
+  var qt_filter = Quantization('static/img.jpg');
+  qt_filter.apply();
+  qt_filter.save('static/quantization_filter.png');
 }

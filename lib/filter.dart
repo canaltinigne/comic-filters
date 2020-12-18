@@ -1,4 +1,5 @@
 import 'dart:io' as io;
+import 'dart:typed_data';
 import 'package:image/image.dart';
 
 class Filter {
@@ -33,6 +34,13 @@ class Filter {
     }
 
     return img1;
+  }
+
+  Uint8List getPixelAsList(Image img, int x, int y) {
+    var list = Uint32List.fromList([img.getPixel(x, y)]);
+    var byte_data = list.buffer.asUint8List();
+
+    return byte_data;
   }
 
   Image threshold(Image img, double threshold) {
