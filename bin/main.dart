@@ -3,8 +3,10 @@ import 'package:filters/detail_enhancement_filter.dart';
 import 'package:filters/pencil_sketch_filter.dart';
 import 'package:filters/pencil_edges.dart';
 import 'package:filters/quantization_filter.dart';
+import 'package:filters/popart.dart';
 
 void main(List<String> arguments) {
+  /*
   var de_filter = DetailEnhancement('static/img.jpg');
   de_filter.apply();
   de_filter.save('static/digitalEnhancement_filter.png');
@@ -24,4 +26,9 @@ void main(List<String> arguments) {
   var qt_filter = Quantization('static/img.jpg');
   qt_filter.apply();
   qt_filter.save('static/quantization_filter.png');
+  */
+
+  var popart = PopArt('static/img.jpg');
+  popart.apply();
+  popart.save('static/popart_filter.png');
 }

@@ -81,4 +81,19 @@ class Filter {
 
     return img1;
   }
+
+  Image addWeighted(Image img1, double alpha, Image img2) {
+    var img1_b = img1.getBytes();
+    var img2_b = img2.getBytes();
+
+    for (var i = 0, len = img1_b.length; i < len; i += 4) {
+      for (var j = 0; j < 3; j += 1) {
+        img1_b[i + j] = (alpha * img1_b[i + j].toDouble() +
+                (1 - alpha) * img2_b[i + j].toDouble())
+            .toInt();
+      }
+    }
+
+    return img1;
+  }
 }

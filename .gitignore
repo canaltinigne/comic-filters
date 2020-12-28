@@ -10,3 +10,5 @@ doc/api/
 
 .DS_Store
 .vscode/
+
+static/vector-bgs/
