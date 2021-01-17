@@ -4,6 +4,7 @@ import 'package:filters/pencil_sketch_filter.dart';
 import 'package:filters/pencil_edges.dart';
 import 'package:filters/quantization_filter.dart';
 import 'package:filters/popart.dart';
+import 'package:filters/pixelate_filter.dart';
 
 void main(List<String> arguments) {
   /*
@@ -28,7 +29,13 @@ void main(List<String> arguments) {
   qt_filter.save('static/quantization_filter.png');
   */
 
+  /*
   var popart = PopArt('static/img.jpg');
   popart.apply();
   popart.save('static/popart_filter.png');
+  */
+
+  var pixelated = Pixelate('static/img.jpg');
+  pixelated.apply();
+  pixelated.save('static/pixelated_filter.png');
 }
