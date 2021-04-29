@@ -1,5 +1,5 @@
-# Comic Filters for Comicsy App
-Several comic filters implemented for Comicsy App with Dart.
+# Comic Filters
+Several comic filters implemented with Dart.
 
 ### Current Filters
 - Detail Enhancement Filter
